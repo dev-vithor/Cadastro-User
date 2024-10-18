@@ -1,14 +1,9 @@
-import './style.css';
+import "./style.css";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useRef, useState } from "react";
 
-import Trash
-  from '../../assets/recyclebinfilled_recycling_full_garbage_1993.png';
-import api from '../../services/api';
+import Trash from "../../assets/recyclebinfilled_recycling_full_garbage_1993.png";
+import api from "../../services/api";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -33,7 +28,16 @@ function Home() {
       email: inputEmail.current.value,
       age: inputAge.current.value,
     });
+
+    // Limpeza do compo de formulario
+    inputName.current.value = "";
+    inputEmail.current.value = "";
+    inputAge.current.value = "";
     getUsers();
+  }
+
+  async function deleteUsers(id) {
+    await api.delete(`/usuarios/${id}`);
   }
 
   return (
@@ -61,7 +65,7 @@ function Home() {
               Email: <span>{user.email}</span>
             </p>
           </div>
-          <button>
+          <button onClick={() => deleteUsers(user.id)}>
             <img src={Trash} className="img-trash" />
           </button>
         </div>
