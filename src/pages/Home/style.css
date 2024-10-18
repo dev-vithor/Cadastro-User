@@ -1,0 +1,93 @@
+.container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  gap: 25px;
+  border-radius: 10px;
+  background-color: #2e2d4e;
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #8b8ae1;
+  color: #fff;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+& button:hover {
+  background-color: #565594;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #4e456c;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #363653;
+  color: #fff;
+  font-size: 16px;
+  padding-left: 10px;
+  outline: none;
+}
+input::placeholder {
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.img-trash {
+  width: 23px;
+}
+
+.card {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2e2d4e;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+
+  & p {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  & span {
+    font-weight: normal;
+  }
+
+  & button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  & button:hover {
+    opacity: 0.7;
+  }
+}
